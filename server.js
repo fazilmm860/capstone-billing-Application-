@@ -5,9 +5,12 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 require('colors');
 
+const connectDB = require('./config/config')
+
 //dotenv config
 dotenv.config();
-
+//db config
+connectDB();
 //rest object
 const app = express();
 
