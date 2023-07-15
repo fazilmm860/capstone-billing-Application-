@@ -20,5 +20,22 @@ const addItemController = async (req, res) => {
     catch (err) {
         res.status(404).json({ message: error.message })
     }
+
 }
-module.exports = { getItemController, addItemController };
+
+//update Item
+const editItemController = async (req, res) => {
+    try {
+        const { itemId } = req.body;
+        console.log(itemId);
+        await itemModel.findOneAndUpdate({ _id: itemId }, req.body, {
+            new: true,
+        })
+        res.status(201).json("item updated")
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+}
+
+module.exports = { getItemController, addItemController, editItemController };
