@@ -4,3 +4,10 @@ body{
 font-family: 'Rubik', sans-serif;
 
 }
+.item-button button{
+   margin-top: 20px;
+   width:150px;
+   background-color: rgb(5, 154, 223);
+   color: aliceblue;
+   border-radius: 10px;
+}

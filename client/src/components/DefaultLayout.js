@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, } from "react";
+import { useSelector } from 'react-redux'
 import { Layout, Menu } from "antd";
 import { Link } from "react-router-dom";
 import {
@@ -14,6 +15,7 @@ import "../styles/DefaultLayout.css";
 const { Header, Sider, Content } = Layout;
 
 const DefaultLayout = ({ children }) => {
+
     const [collapsed, setCollapsed] = useState(false)
 
 
