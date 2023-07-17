@@ -1,7 +1,7 @@
-import React, { useState, } from "react";
-import { useSelector } from 'react-redux'
+import React, { useState, useEffect } from "react";
+import { useSelector, } from 'react-redux'
 import { Layout, Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
@@ -10,12 +10,17 @@ import {
     HomeOutlined,
     CopyOutlined,
     UnorderedListOutlined,
+    ShoppingCartOutlined
 } from "@ant-design/icons";
 import "../styles/DefaultLayout.css";
+import { RootReducer } from "../redux/RootReducer";
+import ItemList from './ItemList';
+import Spinner from "./Spinner";
 const { Header, Sider, Content } = Layout;
 
 const DefaultLayout = ({ children }) => {
-
+    const navigate = useNavigate()
+    const { cartItems, loading } = useSelector(state => state.RootReducer)
     const [collapsed, setCollapsed] = useState(false)
 
 
@@ -24,10 +29,15 @@ const DefaultLayout = ({ children }) => {
             !collapsed
         );
     };
+    // to get local-storage data
+    useEffect(() => {
+        localStorage.setItem('cartItem', JSON.stringify(cartItems))
+    }, [cartItems])
 
 
     return (
         <Layout>
+            {loading && <Spinner />}
             <Sider trigger={null} collapsible collapsed={collapsed}>
                 <div className="logo">
                     <h1 className="text-center text-light font-wight-bold mt-4">Billing-APP</h1>
@@ -63,7 +73,13 @@ const DefaultLayout = ({ children }) => {
                             onClick: toggle,
                         }
                     )}
+                    <div className="cart-item d-flex justify-content-space-between flex-row"
+                        onClick={() => navigate('/cart')}>
+                        <p>{cartItems.length}</p>
+                        <ShoppingCartOutlined />
+                    </div>
                 </Header>
+
                 <Content
                     className="site-layout-background"
                     style={{
