@@ -169,9 +169,12 @@ const ItemPage = () => {
                 <Select>
                   <Select.Option value="drinks">Drinks</Select.Option>
                   <Select.Option value="rice">Rice</Select.Option>
-                  <Select.Option value="noodles">Noodels</Select.Option>
-                  <Select.Option value="noodles">Burger</Select.Option>
-                  <Select.Option value="noodles">Pizza</Select.Option>
+                  <Select.Option value="noodles">Noodles</Select.Option>
+                  <Select.Option value="burger">Burger</Select.Option>
+                  <Select.Option value="pizza">Pizza</Select.Option>
+                  <Select.Option value="sandwich">Sandwich</Select.Option>
+                  <Select.Option value="wrap">Wraps</Select.Option>
+                  <Select.Option value="hot Beverages">Hot Beverages</Select.Option>
                 </Select>
               </Form.Item>
               <div className="d-flex justify-content-end">
