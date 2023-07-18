@@ -11,7 +11,7 @@ const Homepage = () => {
   const[selectedCategory,setSelectedCategory]=useState('drinks')
   const categories=[
     {
-      name:'drink',
+      name:'drinks',
       imageUrl:'https://cdn-icons-png.flaticon.com/512/437/437036.png'
 
     },
@@ -99,3 +99,4 @@ const Homepage = () => {
 }
 
 export default Homepage
+  
