@@ -9,6 +9,7 @@ const Homepage = () => {
   //useState
   const [items,setItemsData]=useState([])
   const dispatch=useDispatch(); 
+
   //useEffect
   useEffect(()=>{
     const getAllItems= async ()=>{
@@ -28,7 +29,7 @@ const Homepage = () => {
     }
    };
    getAllItems();
-   } ,[]);
+   } ,[dispatch]);
   
   console.log(items);
   return (

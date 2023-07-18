@@ -1,5 +1,5 @@
 const express = require('express');
-const { getItemController, addItemController, editItemController } = require('../controllers/itemController');
+const { getItemController, addItemController, editItemController, deleteItemController } = require('../controllers/itemController');
 
 const router = express.Router();
 
@@ -12,5 +12,8 @@ router.post("/add-item", addItemController);
 
 //method-Put
 router.put("/edit-item", editItemController);
+
+//method-delete
+router.post("/delete-item", deleteItemController);
 
 module.exports = router;        

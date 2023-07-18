@@ -1,5 +1,5 @@
 const intialState = {
-    loading: true,
+    loading: false,
     cartItems: []
 }
 

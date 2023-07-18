@@ -6,7 +6,7 @@ import { Table } from 'antd';
 
 const CartPage = () => {
     const dispatch =useDispatch();
-    const {cartItems}=useSelector(state =>state.RootReducer)
+    const {cartItems}=useSelector((state) =>state.RootReducer)
     // handle increament
     const handleIncreament=(record)=>{
         dispatch({

@@ -38,4 +38,17 @@ const editItemController = async (req, res) => {
     }
 }
 
-module.exports = { getItemController, addItemController, editItemController };
+// Delete Item
+const deleteItemController = async (req, res) => {
+    try {
+        const { itemId } = req.body;
+        await itemModel.findOneAndDelete({ _id: itemId })
+
+        res.status(200).json('Item Deleted')
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+}
+
+module.exports = { getItemController, addItemController, editItemController, deleteItemController };
