@@ -37,7 +37,7 @@ const Login = () => {
     <>
       <div className="register">
         <div className="regsiter-form">
-          <h1>POS APP</h1>
+          <h1>Billing APP</h1>
           <h3>Login Page</h3>
           <Form layout="vertical" onFinish={handleSubmit}>
             <Form.Item name="userId" label="User ID">

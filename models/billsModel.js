@@ -14,6 +14,10 @@ const billSchema = mongoose.Schema(
             type: Number,
             required: true,
         },
+        subTotal: {
+            type: Number,
+            required: true,
+        },
         tax: {
             type: Number,
             required: true,
@@ -26,6 +30,7 @@ const billSchema = mongoose.Schema(
             type: Array,
             required: true,
         },
+
         date: {
             type: Date,
             default: Date.now(),
