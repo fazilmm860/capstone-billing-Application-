@@ -58,19 +58,19 @@ height: 100vh;
 .register input{
    width: 400px !important;
 }
-.register-form{
+.regsiter-form{
    background-color: #cccccc30;
    padding: 20px;
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
    border-radius: 20px;
    
 }
-.register-form h1{
+.regsiter-form h1{
    text-align: center;
    background-color: #dcd7d73f;
    color: chocolate;
    border-radius: 30px;
 }
-.register-form h3{
+.regsiter-form h3{
    text-align: center;
 }

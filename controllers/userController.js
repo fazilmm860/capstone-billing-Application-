@@ -1,31 +1,36 @@
-const userModal = require('../models/userModel');
+const userModal = require("../models/userModel");
 
-//Login User
+// login user
 const loginController = async (req, res) => {
     try {
-        const { userId, password } = req.body
+        const { userId, password } = req.body;
         const user = await userModal.findOne({ userId, password, verified: true });
-        res.status(200).json(user);
-    } catch (error) {
+        if (user) {
+            res.status(200).send(user);
+        } else {
+            res.json({
+                message: "Login Fail",
 
-        res.status(404).json({ message: error.message })
+            });
+        }
+    } catch (error) {
+        console.log(error);
     }
 };
 
-//Register User
+//register
 const registerController = async (req, res) => {
     try {
-        const newUser = new userModal(req.body);
-
+        const newUser = new userModal({ ...req.body, verified: true });
         await newUser.save();
-        res.status(201).json('new User added succesfully')
+        res.status(201).send("new User added Successfully!");
+    } catch (error) {
+        res.status(400).send("error", error);
+        console.log(error);
     }
-    catch (err) {
-        res.status(404).json({ message: error.message })
-    }
+};
 
-}
-
-
-
-module.exports = { loginController, registerController };
+module.exports = {
+    loginController,
+    registerController,
+};
