@@ -5,6 +5,8 @@ import Homepage from "./pages/Homepage";
 import ItemPage from "./pages/ItemPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import BillsPage from './pages/BillsPage';
+import CustomerPage from './pages/CustomerPage';
 
 function App() {
   return (
@@ -35,6 +37,24 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="/bills"
+            element={
+              <ProtectedRoute>
+                <BillsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/customers"
+            element={
+              <ProtectedRoute>
+                <CustomerPage />
+              </ProtectedRoute>
+            }
+          />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
