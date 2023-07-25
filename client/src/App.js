@@ -1,4 +1,4 @@
-import { StyleProvider } from '@ant-design/cssinjs';
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import CartPage from "./pages/CartPage";
 import Homepage from "./pages/Homepage";
@@ -13,7 +13,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route
+          < Route
             path="/"
             element={
               <ProtectedRoute>
@@ -56,7 +56,7 @@ function App() {
           />
 
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/signup" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -66,7 +66,7 @@ function App() {
 export default App;
 
 export function ProtectedRoute({ children }) {
-  if (localStorage.getItem("auth")) {
+  if (localStorage.getItem("token")) {
     return children;
   } else {
     return <Navigate to="/login" />;
