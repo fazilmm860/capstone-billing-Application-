@@ -43,7 +43,7 @@ const ItemPage = () => {
         dispatch({
           type:'SHOW_LOADING'
         })
-        const url='http://localhost:3001'
+        const url='https://hotel-billing-6sgh.onrender.com'
         await axios.post(`${url}/api/items/delete-item`,{itemId:record._id});
         message.success("Item Deleted Successsfully")
         getAllItems();
