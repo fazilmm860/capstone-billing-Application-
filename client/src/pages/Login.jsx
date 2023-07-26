@@ -88,7 +88,7 @@ const handleChange=({currentTarget:input})=>{
   const handleSubmit=async(e)=>{
       e.preventDefault()
       try {
-        const url="http://localhost:3001/api/users/signIn";
+        const url="https://hotel-billing-6sgh.onrender.com/api/users/signIn";
         const {data:res}=await axios.post(url,data)
         localStorage.setItem("token",res.data)
         window.location="/"
