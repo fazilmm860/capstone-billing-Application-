@@ -93,7 +93,7 @@ const handleChange=({currentTarget:input})=>{
   const handleSubmit=async(e)=>{
       e.preventDefault()
       try {
-        const url="https://hotel-billing-6sgh.onrender.com/api/users/signUp";
+        const url="http://localhost:3001/api/users/signUp";
         const {data:res}=await axios.post(url,data)
         navigate("/login")
         console.log(res.message);

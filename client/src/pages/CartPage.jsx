@@ -96,7 +96,7 @@ const CartPage = () => {
         userId: JSON.parse(localStorage.getItem("auth"))._id,
       };
       // console.log(newObject);
-      const url='https://hotel-billing-6sgh.onrender.com'
+      const url='http://localhost:3001'
       await axios.post(`${url}/api/bills/add-bills`, newObject);
       message.success("Bill Generated");
       navigate("/bills");

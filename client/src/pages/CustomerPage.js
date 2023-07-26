@@ -11,7 +11,7 @@ const CutomerPage = () => {
             dispatch({
                 type: "SHOW_LOADING",
             });
-            const url = `https://hotel-billing-6sgh.onrender.com`
+            const url = `http://localhost:3001`
             const { data } = await axios.get(`${url}/api/bills/get-bills`);
             setBillsData(data);
             dispatch({ type: "HIDE_LOADING" });
